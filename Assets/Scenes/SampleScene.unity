@@ -150,17 +150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37782f9acbdc1a34d866b32b0a0577d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptableTexts:
-  - {fileID: 11400000, guid: 913c71f2ea8dbbd4db713770621aeec1, type: 2}
-  - {fileID: 11400000, guid: 4e230c8f6ddf30e4295936b91b9d7382, type: 2}
-  - {fileID: 11400000, guid: c0c7d77d9aeb2f340ab503286fd39646, type: 2}
+  scriptableText: {fileID: 11400000, guid: 913c71f2ea8dbbd4db713770621aeec1, type: 2}
   questionText: {fileID: 610595654}
   answer0Button: {fileID: 1925616365}
   answer1Button: {fileID: 571329902}
   answer0GO: {fileID: 1043635836}
   answer1GO: {fileID: 1420732049}
   bonusPrice: 0
-  Scriptable_Index: 0
 --- !u!4 &309472121
 Transform:
   m_ObjectHideFlags: 0

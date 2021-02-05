@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
-    [SerializeField] private ScriptableText[] scriptableTexts;
+    //[SerializeField] private ScriptableText[] scriptableTexts; This method use array index. Keeping all scriptable objects in an array. Increasing array index and using it.  
+    //[SerializeField] private int Scriptable_Index = 0;
+    [SerializeField] private ScriptableText scriptableText;
     [SerializeField] private Text questionText;
     [SerializeField] private Text answer0Button;
     [SerializeField] private Text answer1Button;
@@ -17,7 +19,7 @@ public class QuestionManager : MonoBehaviour
     private int answer0Price;
     private int answer1Price;
     public int bonusPrice = 0;
-    [SerializeField] private int Scriptable_Index = 0;
+
 
     void Start()
     {
@@ -26,10 +28,16 @@ public class QuestionManager : MonoBehaviour
 
     public void NextQuestionButtonLeft()
     {
-        if (Scriptable_Index < scriptableTexts.Length-1)
+        //if (Scriptable_Index < scriptableTexts.Length-1)
+        //{
+        //    bonusPrice += answer1Price;
+        //    Scriptable_Index++;
+        //    QuestionPrepare();
+        //}
+        if (scriptableText.NextQuestion() != null)
         {
             bonusPrice += answer1Price;
-            Scriptable_Index++;
+            scriptableText = scriptableText.NextQuestion();
             QuestionPrepare();
         }
         else
@@ -42,10 +50,16 @@ public class QuestionManager : MonoBehaviour
     }
     public void NextQuestionButtonRight()
     {
-        if (Scriptable_Index < scriptableTexts.Length-1)
+        //if (Scriptable_Index < scriptableTexts.Length - 1)
+        //{
+        //    bonusPrice += answer0Price;
+        //    Scriptable_Index++;
+        //    QuestionPrepare();
+        //}
+        if (scriptableText.NextQuestion() != null)
         {
             bonusPrice += answer0Price;
-            Scriptable_Index++;
+            scriptableText = scriptableText.NextQuestion();
             QuestionPrepare();
         }
         else
@@ -59,11 +73,16 @@ public class QuestionManager : MonoBehaviour
 
     private void QuestionPrepare()
     {
-        question = scriptableTexts[Scriptable_Index].question;
-        answer0 = scriptableTexts[Scriptable_Index].Answer0;
-        answer1 = scriptableTexts[Scriptable_Index].Answer1;
-        answer0Price = scriptableTexts[Scriptable_Index].Answer0Price;
-        answer1Price = scriptableTexts[Scriptable_Index].Answer1Price;
+        //question = scriptableTexts[Scriptable_Index].question;
+        //answer0 = scriptableTexts[Scriptable_Index].Answer0;
+        //answer1 = scriptableTexts[Scriptable_Index].Answer1;
+        //answer0Price = scriptableTexts[Scriptable_Index].Answer0Price;
+        //answer1Price = scriptableTexts[Scriptable_Index].Answer1Price;
+        question = scriptableText.question;
+        answer0 = scriptableText.Answer0;
+        answer1 = scriptableText.Answer1;
+        answer0Price = scriptableText.Answer0Price;
+        answer1Price = scriptableText.Answer1Price;
         questionText.text = question;
         answer0Button.text = answer0;
         answer1Button.text = answer1;

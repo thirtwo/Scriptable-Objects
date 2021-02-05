@@ -10,7 +10,7 @@ public class ScriptableText : ScriptableObject
     [SerializeField] private string answer1;
     [SerializeField] private int answer0Price;
     [SerializeField] private int answer1Price;
-
+    [SerializeField] private ScriptableText nextQuestion;
 
     public string question
     {
@@ -46,5 +46,10 @@ public class ScriptableText : ScriptableObject
         {
             return answer1Price;
         }
+    }
+
+    public ScriptableText NextQuestion()
+    {
+        return nextQuestion;
     }
 }

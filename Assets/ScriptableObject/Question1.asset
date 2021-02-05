@@ -17,3 +17,4 @@ MonoBehaviour:
   answer1: Okay.
   answer0Price: 0
   answer1Price: 5
+  nextQuestion: {fileID: 11400000, guid: c0c7d77d9aeb2f340ab503286fd39646, type: 2}
