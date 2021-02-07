@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ScriptableText")]
+[CreateAssetMenu(menuName = "ScriptableObjects/ScriptableText")]
 public class ScriptableText : ScriptableObject
 {
+    [Header("Question")]
     [TextArea(4, 4)] [SerializeField] private string questionText;
     [SerializeField] private string answer0;
     [SerializeField] private string answer1;
-    [SerializeField] private int answer0Price;
-    [SerializeField] private int answer1Price;
+    [Header("Price")]
+    [Range(0, 100)] [SerializeField] private int answer0Price;
+    [Range(0, 100)] [SerializeField] private int answer1Price;
+    [Header("Next Question")]
     [SerializeField] private ScriptableText nextQuestion;
 
     public string question

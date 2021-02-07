@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[AddComponentMenu("Scripts/QuestionManager")] // Attribute for component menu.
 public class QuestionManager : MonoBehaviour
 {
     //[SerializeField] private ScriptableText[] scriptableTexts; This method use array index. Keeping all scriptable objects in an array. Increasing array index and using it.  
