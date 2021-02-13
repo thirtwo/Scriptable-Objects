@@ -17,4 +17,4 @@ MonoBehaviour:
   answer1: Pretty please!
   answer0Price: 10
   answer1Price: 100
-  nextQuestion: {fileID: 11400000, guid: 90d6ad94fe8eed540a731a0f7e41e10e, type: 2}
+  nextQuestion: {fileID: 0}
