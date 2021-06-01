@@ -8,15 +8,15 @@ public class CoinController : MonoBehaviour
     private int _coin = 0;
     private int _earningPrize = 50;
 
-    private delegate void EarnMoneyDelegate();
+    private delegate void EarnMoneyDelegate(); //creating void type delegate 
     EarnMoneyDelegate earnMoneyDelegate;
 
-    private delegate int ChangePrize(int x);
+    private delegate int ChangePrize(int x); // creating returning int value type of delegate and getting an int parameter
     ChangePrize changePrize;
 
     private void Start()
     {
-        earnMoneyDelegate += Earn50Coin;
+        earnMoneyDelegate += Earn50Coin; // initiated functions to earnMoneyDelegate
         earnMoneyDelegate += UpdateCoinText;
     }
 
@@ -28,8 +28,8 @@ public class CoinController : MonoBehaviour
     public void AddCointoPrizeButton()
     {
         changePrize = null;
-        changePrize += AddCoinfromPrize;
-        changePrize(10);
+        changePrize += AddCoinfromPrize; // initiated int type function to int type delegate 
+        changePrize(10); //called int type delegate
         UpdatePrizeText();
     }
     public void SubractCointoPrizeButton()
@@ -51,12 +51,12 @@ public class CoinController : MonoBehaviour
 
     private int AddCoinfromPrize(int extraPrize)
     {
-       return _earningPrize += extraPrize;
+        return _earningPrize += extraPrize;
     }
 
     private int SubractCoinfromPrize(int extraPrize)
     {
-       return _earningPrize -= extraPrize;
+        return _earningPrize -= extraPrize;
     }
 
     private void UpdatePrizeText()
