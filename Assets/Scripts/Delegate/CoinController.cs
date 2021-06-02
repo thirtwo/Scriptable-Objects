@@ -27,15 +27,13 @@ public class CoinController : MonoBehaviour
 
     public void AddCointoPrizeButton()
     {
-        changePrize = null;
-        changePrize += AddCoinfromPrize; // initiated int type function to int type delegate 
+        changePrize = AddCointoPrize; // initiated int type function to int type delegate 
         changePrize(10); //called int type delegate
         UpdatePrizeText();
     }
     public void SubractCointoPrizeButton()
     {
-        changePrize = null;
-        changePrize += SubractCoinfromPrize;
+        changePrize = SubractCoinfromPrize;
         changePrize(10);
         UpdatePrizeText();
     }
@@ -49,7 +47,7 @@ public class CoinController : MonoBehaviour
         coinText.text = _coin.ToString();
     }
 
-    private int AddCoinfromPrize(int extraPrize)
+    private int AddCointoPrize(int extraPrize)
     {
         return _earningPrize += extraPrize;
     }
